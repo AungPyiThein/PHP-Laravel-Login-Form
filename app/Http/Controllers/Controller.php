@@ -9,9 +9,5 @@ use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
-    //
-    function index()
-    {
-        return view('sample');
-    }
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 }

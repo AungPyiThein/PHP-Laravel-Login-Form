@@ -1,8 +1,10 @@
+
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
-class UsersTablesSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,11 +13,7 @@ class UsersTablesSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'               =>  'Aung Pyi Thein',
-            'email'              =>  'aungpyaethein007@gmail.com',
-            'password'           =>  Hash::make('password'),
-            'remember_token'     =>  str_random(10)
-            ]);
+        Eloquent::unguard();
+        $this->call(UsersTablesSeeder::class);
     }
 }
